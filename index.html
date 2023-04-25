@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylereset" href="./assets/reset.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <script src ="./assets/script.js"></script>
+    <header>
+        <h1>Pasta Trivia</h1>
+        <nav>
+            <p>high scores</p>
+            <p class="timer">60</p>
+        </nav>
+    </header>
+    <div class="loading-screen">
+        <h2>Please try this timed pasta trivia. Keep in mind that wrong answers will deduct from your score.</h2>
+        <button id="start">Start Game</button>
+    </div>
+    <div class="questions hide" id="question-section">
+        <div class="q1">
+            <h3 class="question-text"></h3>
+            <button class="a"></button>
+            <button class="b"></button>
+            <button class="c"></button>
+            <button class="d"></button>
+        </div>
+    </div>
+    <div class="final-score hide">
+        <h3>All done!</h3>
+        <p>Your final score is <span>0</span>.</p>
+        <form>
+            <input type="text" id="initials"/>
+        </form>
+    </div>
+
+    <div class="scoreboard hide">
+        <h3>High Scores</h3>
+        <button class="go-back">Go Back</button>
+        <button class="clear">Clear High Scores</button>
+
+    </div>
+
+    <script src="./assets/script.js"></script>
 </body>
+
 </html>

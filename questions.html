@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylereset" href="./assets/reset.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Pasta Trivia</h1>
+        <nav>
+            <p>high scores</p>
+            <p class="timer"></p>
+        </nav>
+    </header>
+    <div class="loading-screen">
+        <h2>Please try this timed pasta trivia. Keep in mind that wrong answers will deduct from your score.</h2>
+        <button>Start Game</button>
+    </div>
+    <div class="questions">
+        <div class="q1">
+            <h3>1.Which pasta is shaped like a thick spaghetti with hole running through the center?</h3>
+            <button class="questionAnswer">a. Bucatini</button>
+            <button class="1b">b. Bigoli</button>
+            <button class="1c">c. Macaroni</button>
+            <button class="1d">d. Pici</button>
+        </div>
+        <div class="q2">
+            <h3>2. When did tomatoes arrive to Italy?</h3>
+            <button class="2a">a. late 14th century</button>
+            <button class="2b">b. 15th century</button>
+            <button class="questionAnswer">c. early 16th century</button>
+            <button class="2d">d. late 16th century</button>
+        </div>
+        <div class="q3">
+            <h3>3. What three ingredients are used in a béchamel sauce?</h3>
+            <button class="questionAnswer">a. milk, flour, and butter</button>
+            <button class ="3b">b. heavy cream, parmesan, and butter</button>
+            <button class="3c">c. egg yolk, butter, and lemon juice</button>
+            <button class="3d">d. tomatoes, onion, and butter</button>
+        </div>
+        <div class="q4">
+            <h3>Which continent are tomatoes native to?</h3>
+            <button class="4a">a. Africa</button>
+            <button class="4b">b. Europe</button>
+            <button class="4c">c. Asia</button>
+            <button class="questionAnswer">d. America</button>
+        </div>
+        <div class="q5">
+            <h3>5. Spaghetti comes from the word spago in Italian. What does spago mean?</h3>
+            <button class="5a">a. tasty</button>
+            <button class="questionAnswer">b. string</button>
+            <button class="5c">c. wire</button>
+            <button class="5d">d. pasta</button>
+        </div>
+    </div>
+    <div class="final-score">
+        <h3>All done!</h3>
+        <p>Your final score is <span>0</span>.</p>
+        <form>
+            <input type="text" id="initials"/>
+        </form>
+    </div>
+
+    <div class="scoreboard">
+        <h3>High Scores</h3>
+        <button class="go-back">Go Back</button>
+        <button class="clear">Clear High Scores</button>
+
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
