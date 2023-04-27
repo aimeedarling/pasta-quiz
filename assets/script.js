@@ -24,14 +24,14 @@ const scoreboard = (".scoreboard")
 let index = 0
 
 const questions = [{
-    question: "1.Which pasta is shaped like a thick spaghetti with hole running through the center?", 
-    choices: ["Bucatini", "Bigoli", "Macaroni","Pici"],
-    answer: "Bucatini",
+        question: "1.Which pasta is shaped like a thick spaghetti with hole running through the center?", 
+        choices: ["Bucatini", "Bigoli", "Macaroni","Pici"],
+        answer: "Bucatini",
     },
     {
-    question: "2. When did tomatoes arrive to Italy?",
-    choices: ["late 14th century","15h century", "early 16th century", "late 16th century"],
-    answer: "early 16th century"
+        question: "2. When did tomatoes arrive to Italy?",
+        choices: ["late 14th century","15h century", "early 16th century", "late 16th century"],
+        answer: "early 16th century"
     },
     {
         question: "3. What three ingredients are used in a béchamel sauce?",
@@ -51,7 +51,7 @@ const questions = [{
     }
 ]
 
-let timeRemaining = questions.length *15
+let timeRemaining = questions.length *12
 let timerId = 0
 
 startBtn.addEventListener("click", function(){
@@ -74,11 +74,12 @@ b.addEventListener("click", nextQuestion)
 c.addEventListener("click", nextQuestion)
 d.addEventListener("click", nextQuestion)
 
-function nextQuestion(){
+function nextQuestion() {
     if(this.textContent === questions[index].answer){
         alert("Correct")
     }
     else{
+        timeRemaining= timeRemaining - 6
         alert("Wrong")
     }
     index++
@@ -87,8 +88,10 @@ function nextQuestion(){
 
 function setTime(){
     timerEl.textContent=timeRemaining--
-}
+  }
 
+  if timerId === 0
+  then clearTimeout
 
 // function setTime() {
 //     // Sets interval in variable
