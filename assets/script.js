@@ -1,8 +1,11 @@
 const timerEl = document.querySelector(".timer")
 const loadingScreen = document.querySelector(".loading-screen")
 const questionsEl = document.querySelector("#question-section")
-const finalScoreEl = document.querySelector("final-score")
+const finalScoreEl = document.querySelector(".final-score")
+const scoreboardEl = document.querySelector(".scoreboard")
 const startBtn = document.querySelector("#start")
+const initialsInput = document.querySelector("#Initials")
+const submitBtn = document.querySelector("#submit")
 const a = document.querySelector(".a")
 const b = document.querySelector(".b")
 const c = document.querySelector(".c")
@@ -17,8 +20,8 @@ const q4 = document.querySelector(".q4")
 const q5 = document.querySelector(".q5")
 
 // const answers = (".questionAnswer")
-const finalScore = (".final-score")
-const scoreboard = (".scoreboard")
+// const finalScore = (".final-score")
+// const scoreboard = (".scoreboard")
 
 let index = 0
 
@@ -78,21 +81,31 @@ c.addEventListener("click", nextQuestion)
 d.addEventListener("click", nextQuestion)
 
 function nextQuestion() {
-    if (this.textContent === questions[index].answer) {
+    if (timeRemaining <= 0 || questions.length == index) { endQuiz();
+    } else if (this.textContent === questions[index].answer) {
         alert("Correct")
-    }
-    else {
+        index++
+        displayQuestion()
+    } else if (this.textContent !== questions[index].answer) {
         timeRemaining = timeRemaining - 6
         alert("Wrong")
-    }
-    index++
-    displayQuestion()
+        index++
+        displayQuestion()
+    } 
+   }
+
+function endQuiz() {
+    clearInterval(timerId);
+    questionsEl.classList.add("hide")
+    finalScoreEl.classList.remove("hide")
+    const finalScore = timeRemaining;
+    document.getElementById("score").textContent = finalScore;
 }
 
-
-if (timeRemaining <= 0 || questions.length == questions[index] ) {
-    function endQuiz(){
-    clearInterval(timerInterval);
-    questionsEl.add("hide")
-    finalScoreEl.remove("hide")
-}}
+submitBtn.addEventListener("click", function(){
+    const initials= initialsInput.value 
+    const score = finalScore.textContent
+    localStorage.setItem ("score", score)
+    localStorage.setItem("initials", initials)
+}
+)
