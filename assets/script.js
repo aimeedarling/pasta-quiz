@@ -19,10 +19,6 @@ const q3 = document.querySelector(".q3")
 const q4 = document.querySelector(".q4")
 const q5 = document.querySelector(".q5")
 
-// const answers = (".questionAnswer")
-// const finalScore = (".final-score")
-// const scoreboard = (".scoreboard")
-
 let index = 0
 
 const questions = [{
@@ -53,8 +49,10 @@ const questions = [{
 }
 ]
 
+let score = questions.length * 10
 let timeRemaining = questions.length * 10
 let timerId = 0
+
 
 startBtn.addEventListener("click", function () {
     questionsEl.classList.remove("hide")
@@ -81,7 +79,8 @@ c.addEventListener("click", nextQuestion)
 d.addEventListener("click", nextQuestion)
 
 function nextQuestion() {
-    if (timeRemaining <= 0 || questions.length == index) { endQuiz();
+    if (timeRemaining <= 0 || questions.length == index) {
+        endQuiz();
     } else if (this.textContent === questions[index].answer) {
         alert("Correct")
         index++
@@ -91,21 +90,43 @@ function nextQuestion() {
         alert("Wrong")
         index++
         displayQuestion()
-    } 
-   }
+    }
+}
 
 function endQuiz() {
     clearInterval(timerId);
+    const score = timeRemaining;
     questionsEl.classList.add("hide")
     finalScoreEl.classList.remove("hide")
-    const finalScore = timeRemaining;
-    document.getElementById("score").textContent = finalScore;
+    finalScore.innerHTML = `<p>Your final score is <spa>${score}</span>.</p>`
 }
 
-submitBtn.addEventListener("click", function(){
-    const initials= initialsInput.value 
-    const score = finalScore.textContent
-    localStorage.setItem ("score", score)
+submitBtn.addEventListener("click", function () {
+    const initials = initialsInput.value
+
+    localStorage.setItem("score", score)
     localStorage.setItem("initials", initials)
+    finalScoreEl.classList.add("hide")
+    scoreboardEl.classList.remove("hide")
 }
 )
+
+const scores = JSON.parse(localStorage.getItem("score")) || [];
+scores.sort((a, b) => b.score - a.score);
+
+scores.forEach((scores, index) => {
+    const row = document.createElement("tr");
+    const rank = document.createElement("td");
+    const initials = document.createElement("td");
+    const scoreEl = document.createElement("td");
+
+    rank.textContent = index + 1;
+    initials.textContent = score.initials;
+    scoreEl.textContent = score.score;
+
+    row.appendChild(rank);
+    row.appendChild(initials);
+    row.appendChild(scoreEl);
+
+    scoreboardEl.appendChild(row);
+});
