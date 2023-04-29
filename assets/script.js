@@ -126,27 +126,26 @@ submitBtn.addEventListener("click", function () {
     displayScoreboard()
 }
 )
-function displayScoreboard (){
-   if (localStorage.getItem("score")){
-    highScores = JSON.parse (localStorage.getItem("score"))
-   }
-   highScoreListEl.textContent = ""
-   for (let i = 0; i < highScores.length; i++) {
-        var li = document.createElement ("li")
-        li.textContent = highScores[i].initials+ " - " + highScores[i].score
+function displayScoreboard() {
+    if (localStorage.getItem("score")) {
+        highScores = JSON.parse(localStorage.getItem("score"))
+    }
+    highScoreListEl.textContent = ""
+    for (let i = 0; i < highScores.length; i++) {
+        var li = document.createElement("li")
+        li.textContent = highScores[i].initials + " - " + highScores[i].score
         highScoreListEl.appendChild(li)
-   }
+    }
 }
 
 goBackBtn.addEventListener("click", function () {
     location.reload()
 })
 
-clearBtn.addEventListener("click", function(){
+clearBtn.addEventListener("click", function () {
     localStorage.clear()
     highScoreListEl.textContent = ""
-}
-)
+})
 
 const scores = JSON.parse(localStorage.getItem("score")) || [];
 scores.sort((a, b) => b.score - a.score);
