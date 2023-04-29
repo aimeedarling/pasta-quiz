@@ -132,11 +132,12 @@ function displayScoreboard() {
     }
     highScoreListEl.textContent = ""
     for (let i = 0; i < highScores.length; i++) {
-        var li = document.createElement("li")
+        let li = document.createElement("li")
         li.textContent = highScores[i].initials + " - " + highScores[i].score
         highScoreListEl.appendChild(li)
     }
 }
+displayScoreboard()
 
 goBackBtn.addEventListener("click", function () {
     location.reload()
