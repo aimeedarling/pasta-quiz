@@ -14,7 +14,7 @@
     <header>
         <h1>Pasta Trivia</h1>
         <nav>
-            <p>high scores</p>
+            <p></p>
             <p class="timer">0</p>
         </nav>
     </header>
@@ -33,18 +33,25 @@
     </div>
     <div class="final-score hide">
         <h3>All done!</h3>
-        <p>Your final score is <span>0</span>.</p>
-        <form>
+        <p>Your final score is <span id="score">0</span>.</p>
+        <div>
             <input id="initials" type="text" placeholder="Enter your initials!"/>
             <button id="submit">Submit</button>
-        </form>
+        </div>
     </div>
 
     <table class="scoreboard hide">
+        <tr>
+        <td>
+            <td>
         <h3>High Scores</h3>
+        <ul id="high-score-list">
+            
+        </ul>
         <button class="go-back">Go Back</button>
         <button class="clear">Clear High Scores</button>
-
+            </td>
+    </tr>
     </table>
 
     <script src="./assets/script.js"></script>
