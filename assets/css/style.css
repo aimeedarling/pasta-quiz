@@ -1,0 +1,45 @@
+:root {
+    --pasta: #ffe5a8;
+    --marinara: #7A2626;
+    --pesto: #4c7461;
+    --squidink: #00000;
+    --mozzarella: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: noodleshaded;
+    src: url(./assets/font);
+}
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    font-family: script, Courier, monospace;
+    background-color: var(--pasta)
+}
+
+.hide {
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--pesto);
+    color: var(--mozzarella);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+.timer{
+    
+}

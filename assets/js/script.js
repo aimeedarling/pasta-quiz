@@ -68,6 +68,9 @@ startBtn.addEventListener("click", function () {
 
 function setTime() {
     timerEl.textContent = "Time left: " + timeRemaining--;
+    if (timeRemaining <= 0 ){
+        endQuiz();
+    } 
 }
 
 function displayQuestion() {
