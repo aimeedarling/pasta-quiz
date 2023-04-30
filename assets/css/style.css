@@ -2,24 +2,21 @@
     --pasta: #ffe5a8;
     --marinara: #7A2626;
     --pesto: #4c7461;
-    --squidink: #00000;
+    --squidink: #000000;
     --mozzarella: #ffffff;
 }
 
 * {
     box-sizing: border-box;
 }
-@font-face {
-    font-family: noodleshaded;
-    src: url(./assets/font);
-}
+
 
 html {
     font-size: 62.5%
 }
 
 body {
-    font-family: script, Courier, monospace;
+    font-family: Courier, monospace, arial;
     background-color: var(--pasta)
 }
 
@@ -29,17 +26,18 @@ body {
 
 header {
     display: flex;
+    font-family: 'Brush Script MT', Courier, monospace;
     justify-content: space-around;
     background-color: var(--pesto);
     color: var(--mozzarella);
     border-radius: 1rem;
-    padding: 2rem;
-}
-
-h1{
+    padding: 2rem, 0rem;
     font-size: 3rem;
 }
 
-.timer{
-    
+.loading-screen, .final-score, .scoreboard {
+    display: flexbox;
+    padding: 4rem;
+    justify-content: space-around;
+    align-items: center;
 }
