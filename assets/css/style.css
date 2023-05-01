@@ -30,14 +30,26 @@ header {
     justify-content: space-around;
     background-color: var(--pesto);
     color: var(--mozzarella);
+    border: .3rem solid var(--mozzarella);
     border-radius: 1rem;
     padding: 2rem, 0rem;
     font-size: 3rem;
 }
 
-.loading-screen, .final-score, .scoreboard {
+.loading-screen, .questions, .final-score, .scoreboard {
     display: flexbox;
-    padding: 4rem;
+    padding: 6rem 1rem;
+    border: .3rem solid var(--mozzarella); 
+    border-radius: 1rem;
     justify-content: space-around;
     align-items: center;
+    font-size: 1.5rem;
+    color: var(--squidink)
+}
+#submit, #start, .a, .b, .c, .d {
+    background-color: var(--marinara);
+    border: .3rem solid var(--mozzarella);
+    color: var(--mozzarella);
+    padding: 1rem;
+    border-radius: 1rem;
 }
